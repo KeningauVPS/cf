@@ -48,9 +48,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://molycolor.github.io/cf"></form>
@@ -60,6 +60,57 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Dev-Env-CentOS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/08/05/Dev-Env-CentOS/" class="article-date">
+  <time datetime="2016-08-05T02:51:18.000Z" itemprop="datePublished">2016-08-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/08/05/Dev-Env-CentOS/">Dev Env CentOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li>sudo wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-7.repo" target="_blank" rel="external">http://mirrors.aliyun.com/repo/Centos-7.repo</a></li>
+<li>sudo yum makecache</li>
+<li>sudo yum update</li>
+<li>sudo yum groupinstall “Development tools”</li>
+<li>sudo yum install -y gcc cmake make gcc-c++  apr<em>  automake autoconf libxml2 libxml2-devel openssl openssl-devel curl</em> libjpeg<em> libpng</em> freetype<em> zlib-devel zip unzip gzip ncurses</em> pcre-devel bzip2<em> gd gd-devel kernel keyutils patch perl kernel-headers compat</em> mpfr cpp glibc libgomp libstdc++-devel ppl cloog-ppl keyutils-libs-devel libcom_err-devel libsepol-devel libselinux-devel krb5-devel zlib-devel libXpm<em>  php-common php-gd ncurses</em> libtool*  patch  libmcrypt libmcrypt-devel mcrypt mhash –skip-broken</li>
+<li>sudo yum install libicu-devel</li>
+<li>sudo yum install php-devel</li>
+<li>sudo yum install php-pear</li>
+<li>sudo yum install curl-devel</li>
+<li>sudo yum install php-pecl-memcache</li>
+<li>sudo pecl install pecl_http</li>
+</ol>
+<hr>
+<p>Repo: <a href="http://mirrors.aliyun.com" target="_blank" rel="external">Aliyun</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirh5wa3r0000l87mf04ug3nm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-install-lnmp" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -96,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cireonkaw0000yd7mebtop67o" class="article-share-link">Partager</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirh5wa3y0001l87mqhwqfh3v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cireonkbd0004yd7maimee4t8" class="article-share-link">Partager</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirh5wa4a0005l87mnnvumfj0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -181,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cireonkb70002yd7mxrig3p8j" class="article-share-link">Partager</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirh5wa460004l87m77f74nyh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -218,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cireonkba0003yd7mn20jwks0" class="article-share-link">Partager</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirh5wa450003l87mubll1yq7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -263,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/hello-world/" data-id="cireonkb30001yd7m1xdqiitq" class="article-share-link">Partager</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/hello-world/" data-id="cirh5wa420002l87m8bqttsp0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,9 +349,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/cf/2016/08/05/Dev-Env-CentOS/">Dev Env CentOS</a>
+          </li>
         
           <li>
             <a href="/cf/2016/08/03/install-lnmp/">install lnmp</a>
@@ -318,10 +373,6 @@
             <a href="/cf/2016/08/01/install-node-js/">install node.js</a>
           </li>
         
-          <li>
-            <a href="/cf/2016/08/01/hello-world/">Hello World</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -335,7 +386,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 cf<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
