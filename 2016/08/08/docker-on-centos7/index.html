@@ -3,33 +3,57 @@
 <head>
   <meta charset="utf-8">
   
-  <title>vpn centos 7 | cf</title>
+  <title>docker on centos7 | cf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="wget vpn_centos7.sh
-chmod a+x vpn_centos7.sh
-./vpn_centos7.sh
-vim /etc/ppp/chap-secrets
-service pptpd restart
-yum install net-tools">
+  <meta name="description" content="check VPS
+yum install virt-what
+virt-what
+uname -r
+
+Note:
+openVZ unsupported, KVM good.
+kernel must be 3.10 at minimum.
+
+
+Install
+sudo yum update
+curl -fsSL https://get.docker.com/ | sh
+sudo service d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vpn centos 7">
-<meta property="og:url" content="http://molycolor.github.io/cf/2016/08/02/vpn-centos-7/index.html">
+<meta property="og:title" content="docker on centos7">
+<meta property="og:url" content="http://molycolor.github.io/cf/2016/08/08/docker-on-centos7/index.html">
 <meta property="og:site_name" content="cf">
-<meta property="og:description" content="wget vpn_centos7.sh
-chmod a+x vpn_centos7.sh
-./vpn_centos7.sh
-vim /etc/ppp/chap-secrets
-service pptpd restart
-yum install net-tools">
-<meta property="og:updated_time" content="2016-08-02T04:35:58.000Z">
+<meta property="og:description" content="check VPS
+yum install virt-what
+virt-what
+uname -r
+
+Note:
+openVZ unsupported, KVM good.
+kernel must be 3.10 at minimum.
+
+
+Install
+sudo yum update
+curl -fsSL https://get.docker.com/ | sh
+sudo service d">
+<meta property="og:updated_time" content="2016-08-09T07:13:34.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vpn centos 7">
-<meta name="twitter:description" content="wget vpn_centos7.sh
-chmod a+x vpn_centos7.sh
-./vpn_centos7.sh
-vim /etc/ppp/chap-secrets
-service pptpd restart
-yum install net-tools">
+<meta name="twitter:title" content="docker on centos7">
+<meta name="twitter:description" content="check VPS
+yum install virt-what
+virt-what
+uname -r
+
+Note:
+openVZ unsupported, KVM good.
+kernel must be 3.10 at minimum.
+
+
+Install
+sudo yum update
+curl -fsSL https://get.docker.com/ | sh
+sudo service d">
   
     <link rel="alternate" href="/atom.xml" title="cf" type="application/atom+xml">
   
@@ -78,10 +102,10 @@ yum install net-tools">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-vpn-centos-7" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-docker-on-centos7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/cf/2016/08/02/vpn-centos-7/" class="article-date">
-  <time datetime="2016-08-02T04:27:18.000Z" itemprop="datePublished">2016-08-02</time>
+    <a href="/cf/2016/08/08/docker-on-centos7/" class="article-date">
+  <time datetime="2016-08-08T07:48:05.000Z" itemprop="datePublished">2016-08-08</time>
 </a>
     
   </div>
@@ -92,7 +116,7 @@ yum install net-tools">
         
   
     <h1 class="article-title" itemprop="name">
-      vpn centos 7
+      docker on centos7
     </h1>
   
 
@@ -100,19 +124,36 @@ yum install net-tools">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li>wget <a href="/cf/2016/08/02/vpn-centos-7/vpn_centos7.sh" title="vpn_centos7.sh">vpn_centos7.sh</a></li>
-<li>chmod a+x vpn_centos7.sh</li>
-<li>./vpn_centos7.sh</li>
-<li>vim /etc/ppp/chap-secrets</li>
-<li>service pptpd restart</li>
-<li>yum install net-tools</li>
+        <h1 id="check-VPS"><a href="#check-VPS" class="headerlink" title="check VPS"></a>check VPS</h1><ol>
+<li>yum install virt-what</li>
+<li>virt-what</li>
+<li>uname -r</li>
 </ol>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h3><ul>
+<li>openVZ unsupported, KVM good.</li>
+<li>kernel must be 3.10 at minimum.</li>
+</ul>
+<hr>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><ol>
+<li>sudo yum update</li>
+<li>curl -fsSL <a href="https://get.docker.com/" target="_blank" rel="external">https://get.docker.com/</a> | sh</li>
+<li>sudo service docker start</li>
+<li>sudo docker run hello-world</li>
+<li>sudo chkconfig docker on</li>
+</ol>
+<hr>
+<h1 id="Uninstall"><a href="#Uninstall" class="headerlink" title="Uninstall"></a>Uninstall</h1><ol>
+<li>yum list installed | grep docker</li>
+<li>sudo yum -y remove docker-engine.x86_64</li>
+<li>rm -rf /var/lib/docker</li>
+</ol>
+<hr>
+<p>see <a href="https://docs.docker.com/engine/installation/linux/centos/" target="_blank" rel="external">office</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirn4tfm00007nd7mhfa3q9m6" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cirn4tflk0002nd7mzbtt0f2z" class="article-share-link">Share</a>
       
       
     </footer>
@@ -121,19 +162,10 @@ yum install net-tools">
     
 <nav id="article-nav">
   
-    <a href="/cf/2016/08/03/install-lnmp/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          install lnmp
-        
-      </div>
-    </a>
   
-  
-    <a href="/cf/2016/08/02/vpn-centos-6/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/cf/2016/08/05/youtube-dl/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">vpn centos 6</div>
+      <div class="article-nav-title">youtube-dl</div>
     </a>
   
 </nav>

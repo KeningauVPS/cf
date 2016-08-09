@@ -61,6 +61,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-docker-on-centos7" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/08/08/docker-on-centos7/" class="article-date">
+  <time datetime="2016-08-08T07:48:05.000Z" itemprop="datePublished">2016-08-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/08/08/docker-on-centos7/">docker on centos7</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="check-VPS"><a href="#check-VPS" class="headerlink" title="check VPS"></a>check VPS</h1><ol>
+<li>yum install virt-what</li>
+<li>virt-what</li>
+<li>uname -r</li>
+</ol>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h3><ul>
+<li>openVZ unsupported, KVM good.</li>
+<li>kernel must be 3.10 at minimum.</li>
+</ul>
+<hr>
+<h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><ol>
+<li>sudo yum update</li>
+<li>curl -fsSL <a href="https://get.docker.com/" target="_blank" rel="external">https://get.docker.com/</a> | sh</li>
+<li>sudo service docker start</li>
+<li>sudo docker run hello-world</li>
+<li>sudo chkconfig docker on</li>
+</ol>
+<hr>
+<h1 id="Uninstall"><a href="#Uninstall" class="headerlink" title="Uninstall"></a>Uninstall</h1><ol>
+<li>yum list installed | grep docker</li>
+<li>sudo yum -y remove docker-engine.x86_64</li>
+<li>rm -rf /var/lib/docker</li>
+</ol>
+<hr>
+<p>see <a href="https://docs.docker.com/engine/installation/linux/centos/" target="_blank" rel="external">office</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cirn4tflk0002nd7mzbtt0f2z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-youtube-dl" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cf/2016/08/05/youtube-dl/" class="article-date">
@@ -91,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cirh8gv8q00074q7mj1sbvp5e" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cirn4tfm10008nd7mp4p6zhdn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -137,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cirh8gv8500014q7m2euhkhlh" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cirn4tflg0001nd7m3ca02gyk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -189,7 +250,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirh8gv7z00004q7mpsdoc5l9" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirn4tfla0000nd7mo9ujz39u" class="article-share-link">Share</a>
       
       
     </footer>
@@ -234,7 +295,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirh8gv8c00034q7m3ndohzey" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirn4tflo0004nd7mw6wldtn5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -278,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirh8gv8m00064q7mndem9kuf" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirn4tfm00007nd7mhfa3q9m6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -319,7 +380,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirh8gv8h00054q7miwivgabh" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirn4tflx0006nd7mt4pu9uiv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirh8gv8e00044q7mh3rzlv9g" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirn4tfls0005nd7mkdr9093h" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,7 +462,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/hello-world/" data-id="cirh8gv8900024q7mbj89fu00" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/hello-world/" data-id="cirn4tflm0003nd7mnxb0ddxj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -441,6 +502,10 @@
       <ul>
         
           <li>
+            <a href="/cf/2016/08/08/docker-on-centos7/">docker on centos7</a>
+          </li>
+        
+          <li>
             <a href="/cf/2016/08/05/youtube-dl/">youtube-dl</a>
           </li>
         
@@ -454,10 +519,6 @@
         
           <li>
             <a href="/cf/2016/08/03/install-lnmp/">install lnmp</a>
-          </li>
-        
-          <li>
-            <a href="/cf/2016/08/02/vpn-centos-7/">vpn centos 7</a>
           </li>
         
       </ul>
