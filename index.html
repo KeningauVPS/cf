@@ -61,6 +61,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nsenter-on-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/08/09/nsenter-on-docker/" class="article-date">
+  <time datetime="2016-08-09T09:03:10.000Z" itemprop="datePublished">2016-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/08/09/nsenter-on-docker/">nsenter on docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><ol>
+<li>wget <a href="https://www.kernel.org/pub/linux/utils/util-linux/v2.24/util-linux-2.24.tar.gz" target="_blank" rel="external">https://www.kernel.org/pub/linux/utils/util-linux/v2.24/util-linux-2.24.tar.gz</a></li>
+<li>tar zxvf util-linux-2.24.tar.gz</li>
+<li>cd util-linux-2.24</li>
+<li>./configure –without-ncurses</li>
+<li>make nsenter</li>
+<li>cp nsenter /usr/local/bin</li>
+</ol>
+<hr>
+<h1 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ docker ps</div><div class="line">$ docker inspect --format &quot;&#123;&#123; .State.Pid &#125;&#125;&quot; &lt;CONTAINER ID&gt;</div><div class="line">$ nsenter --mount --uts --ipc --net --pid --target &lt;PID&gt;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cirn9z6pq0006227mcszs7nvf" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-docker-on-centos7" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cf/2016/08/08/docker-on-centos7/" class="article-date">
@@ -112,7 +158,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cirn4tflk0002nd7mzbtt0f2z" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cirn9z6pc0002227mb1orw9o1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -152,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cirn4tfm10008nd7mp4p6zhdn" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cirn9z6py0009227m0x6aebhf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -198,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cirn4tflg0001nd7m3ca02gyk" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cirn9z6p80001227m5l3jycef" class="article-share-link">Share</a>
       
       
     </footer>
@@ -250,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirn4tfla0000nd7mo9ujz39u" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirn9z6p10000227mf53tmmtw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -295,7 +341,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirn4tflo0004nd7mw6wldtn5" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirn9z6pi0004227m0w26ff9a" class="article-share-link">Share</a>
       
       
     </footer>
@@ -339,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirn4tfm00007nd7mhfa3q9m6" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirn9z6pw0008227maist2em0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -380,7 +426,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirn4tflx0006nd7mt4pu9uiv" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirn9z6pt0007227m26at3t1m" class="article-share-link">Share</a>
       
       
     </footer>
@@ -417,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirn4tfls0005nd7mkdr9093h" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirn9z6pl0005227ms7shfo2n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -462,7 +508,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/hello-world/" data-id="cirn4tflm0003nd7mnxb0ddxj" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/hello-world/" data-id="cirn9z6pf0003227m6k7dddko" class="article-share-link">Share</a>
       
       
     </footer>
@@ -502,6 +548,10 @@
       <ul>
         
           <li>
+            <a href="/cf/2016/08/09/nsenter-on-docker/">nsenter on docker</a>
+          </li>
+        
+          <li>
             <a href="/cf/2016/08/08/docker-on-centos7/">docker on centos7</a>
           </li>
         
@@ -515,10 +565,6 @@
         
           <li>
             <a href="/cf/2016/08/05/Dev-Env-CentOS/">Dev Env CentOS</a>
-          </li>
-        
-          <li>
-            <a href="/cf/2016/08/03/install-lnmp/">install lnmp</a>
           </li>
         
       </ul>
