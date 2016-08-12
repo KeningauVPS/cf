@@ -88,12 +88,14 @@
 <li>chmod a+x bench.sh</li>
 <li>./bench.sh</li>
 </ol>
+<p><img src="2016/08/12/vps-test/b_ref.png" alt=""></p>
 <hr>
 <ol>
 <li>wget <a href="/cf/2016/08/12/vps-test/unixbench.sh" title="unixbench.sh">unixbench.sh</a></li>
 <li>chmod a+x unixbench.sh</li>
 <li>./unixbench.sh</li>
 </ol>
+<p><img src="2016/08/12/vps-test/ub_ref.png" alt=""></p>
 <hr>
 <ol>
 <li>wget <a href="http://c.speedtest.net/mini/mini.zip" target="_blank" rel="external">http://c.speedtest.net/mini/mini.zip</a></li>
@@ -101,11 +103,33 @@
 <li>mv mini #YOUR SITE ROOT#</li>
 <li>browser #YOUR DOMAIN#/mini/index-php.html</li>
 </ol>
+<p><img src="2016/08/12/vps-test/m_ref.png" alt=""></p>
+<hr>
+<ol>
+<li>cat /proc/cpuinfo (cpu info)</li>
+<li>cat /proc/meminfo (mem info)</li>
+<li>df -lh (hard info)</li>
+</ol>
+<hr>
+<ol>
+<li>dd if=/dev/zero of=test bs=64k count=4k oflag=dsync (ref: 209MB/S)</li>
+<li>dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync (ref: 145MB/S)</li>
+</ol>
+<hr>
+<ol>
+<li>wget <a href="http://cachefly.cachefly.net/100mb.test" target="_blank" rel="external">http://cachefly.cachefly.net/100mb.test</a> (ref: 81.2MB/s)</li>
+<li>ping google.com (ref: 24.3ms)</li>
+<li>ping facebook.com (ref: 30.1ms)</li>
+<li>ping youtube.com (ref: 24.2ms)</li>
+<li>ping twitter.com (ref: 11.8ms)</li>
+<li>ping baidu.com (ref: 169ms)</li>
+<li>ping qq.com (ref: 159ms)</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cirr7mzh70009dn7mt5l5ov6n" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cirr9vize0009jn7mlnlt40xm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +175,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cirr7mzgz0006dn7mcuyss4j2" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cirr9viyx0006jn7mrfb171em" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +236,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cirr7mzgm0002dn7myydmah7m" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cirr9viya0001jn7mv8ejqdp9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -252,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cirr7mzhj000adn7mgplfrep2" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cirr9vizf000ajn7mkcnhvu61" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cirr7mzgg0001dn7mryii7jge" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cirr9viyf0002jn7mbdc6y4y2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +374,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirr7mzga0000dn7m8ju7uchm" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cirr9viy30000jn7m3tdz4ggw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirr7mzgs0004dn7mw70kfay8" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cirr9viyt0004jn7mafy1j4y0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirr7mzh50008dn7mn8stn41x" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cirr9vizc0008jn7myd7sjblb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -480,7 +504,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirr7mzh30007dn7m20t5ic82" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cirr9viz00007jn7m7ou1j7hk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -517,7 +541,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirr7mzgv0005dn7mekqoxga6" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cirr9viyv0005jn7mng0pu5tw" class="article-share-link">Share</a>
       
       
     </footer>

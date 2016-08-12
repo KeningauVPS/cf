@@ -11,16 +11,18 @@ chmod a+x bench.sh
 
 
 
+
 wget unixbench.sh
 chmod a+x unixbench.sh
 ./unixbench.sh
 
 
 
+
 wget http://c.speedtest.net/mini/mini.zip
 unzip mini.zip
 mv mini #YOUR SITE ROOT#
-browser #YO">
+browser #">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vps test">
 <meta property="og:url" content="http://molycolor.github.io/cf/2016/08/12/vps-test/index.html">
@@ -31,17 +33,22 @@ chmod a+x bench.sh
 
 
 
+
 wget unixbench.sh
 chmod a+x unixbench.sh
 ./unixbench.sh
 
 
 
+
 wget http://c.speedtest.net/mini/mini.zip
 unzip mini.zip
 mv mini #YOUR SITE ROOT#
-browser #YO">
-<meta property="og:updated_time" content="2016-08-12T03:44:00.000Z">
+browser #">
+<meta property="og:image" content="http://molycolor.github.io/cf/2016/08/12/vps-test/b_ref.png">
+<meta property="og:image" content="http://molycolor.github.io/cf/2016/08/12/vps-test/ub_ref.png">
+<meta property="og:image" content="http://molycolor.github.io/cf/2016/08/12/vps-test/m_ref.png">
+<meta property="og:updated_time" content="2016-08-12T04:46:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vps test">
 <meta name="twitter:description" content="wget bench.sh
@@ -50,16 +57,19 @@ chmod a+x bench.sh
 
 
 
+
 wget unixbench.sh
 chmod a+x unixbench.sh
 ./unixbench.sh
 
 
 
+
 wget http://c.speedtest.net/mini/mini.zip
 unzip mini.zip
 mv mini #YOUR SITE ROOT#
-browser #YO">
+browser #">
+<meta name="twitter:image" content="http://molycolor.github.io/cf/2016/08/12/vps-test/b_ref.png">
   
     <link rel="alternate" href="/atom.xml" title="cf" type="application/atom+xml">
   
@@ -135,12 +145,14 @@ browser #YO">
 <li>chmod a+x bench.sh</li>
 <li>./bench.sh</li>
 </ol>
+<p><img src="2016/08/12/vps-test/b_ref.png" alt=""></p>
 <hr>
 <ol>
 <li>wget <a href="/cf/2016/08/12/vps-test/unixbench.sh" title="unixbench.sh">unixbench.sh</a></li>
 <li>chmod a+x unixbench.sh</li>
 <li>./unixbench.sh</li>
 </ol>
+<p><img src="2016/08/12/vps-test/ub_ref.png" alt=""></p>
 <hr>
 <ol>
 <li>wget <a href="http://c.speedtest.net/mini/mini.zip" target="_blank" rel="external">http://c.speedtest.net/mini/mini.zip</a></li>
@@ -148,11 +160,33 @@ browser #YO">
 <li>mv mini #YOUR SITE ROOT#</li>
 <li>browser #YOUR DOMAIN#/mini/index-php.html</li>
 </ol>
+<p><img src="2016/08/12/vps-test/m_ref.png" alt=""></p>
+<hr>
+<ol>
+<li>cat /proc/cpuinfo (cpu info)</li>
+<li>cat /proc/meminfo (mem info)</li>
+<li>df -lh (hard info)</li>
+</ol>
+<hr>
+<ol>
+<li>dd if=/dev/zero of=test bs=64k count=4k oflag=dsync (ref: 209MB/S)</li>
+<li>dd if=/dev/zero of=test bs=8k count=256k conv=fdatasync (ref: 145MB/S)</li>
+</ol>
+<hr>
+<ol>
+<li>wget <a href="http://cachefly.cachefly.net/100mb.test" target="_blank" rel="external">http://cachefly.cachefly.net/100mb.test</a> (ref: 81.2MB/s)</li>
+<li>ping google.com (ref: 24.3ms)</li>
+<li>ping facebook.com (ref: 30.1ms)</li>
+<li>ping youtube.com (ref: 24.2ms)</li>
+<li>ping twitter.com (ref: 11.8ms)</li>
+<li>ping baidu.com (ref: 169ms)</li>
+<li>ping qq.com (ref: 159ms)</li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cirr7mzh70009dn7mt5l5ov6n" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cirr9vize0009jn7mlnlt40xm" class="article-share-link">Share</a>
       
       
     </footer>
