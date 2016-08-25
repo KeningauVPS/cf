@@ -61,6 +61,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql-on-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/08/25/mysql-on-docker/" class="article-date">
+  <time datetime="2016-08-25T03:24:06.000Z" itemprop="datePublished">2016-08-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/08/25/mysql-on-docker/">mysql on docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>run mysql</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker pull mysql</div><div class="line">docker run --name SELF_NAME -d -p SELF_PORT:3306 -v /SELF_PATH:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=SELF_PASSWORD mysql</div></pre></td></tr></table></figure>
+<p>on existing database SELF_PATH, use password setting before:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run --name SELF_NAME -d -p SELF_PORT:3306 -v /SELF_PATH:/var/lib/mysql mysql</div></pre></td></tr></table></figure>
+<p>dump db data:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec SELF_NAME sh -c &apos;exec mysqldump --all-databases -uroot -p&quot;$MYSQL_ROOT_PASSWORD&quot;&apos; &gt; xxx.sql</div></pre></td></tr></table></figure>
+<p>OR</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker exec SELF_NAME sh -c &apos;exec mysqldump -uroot -p&quot;$MYSQL_ROOT_PASSWORD&quot; SELF_BASENAME&apos; &gt; xxx.sql</div></pre></td></tr></table></figure>
+<p>run phpmyadmin:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker pull phpmyadmin/phpmyadmin</div><div class="line">docker run --name SELF_NAME -d -p SELF_PORT:80 --link SELF_NAME_MYSQL:db phpmyadmin/phpmyadmin</div></pre></td></tr></table></figure>
+<hr>
+<p>see <a href="https://hub.docker.com/_/mysql/" target="_blank" rel="external">mysql</a> and <a href="https://hub.docker.com/r/phpmyadmin/phpmyadmin/" target="_blank" rel="external">phpmyadmin</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cis9tjtf40006k87mh31b2c8z" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-vps-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cf/2016/08/12/vps-test/" class="article-date">
@@ -145,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cis8iv5jw00093u7mgzwi5ga6" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cis9tjtfb000ak87mlzqbq5gl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -196,7 +244,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cis8iv5jp00063u7mnll31g6o" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cis9tjtf60007k87mz51dfblk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -257,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cis8iv5jc00023u7my3wo2khk" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos7/" data-id="cis9tjteo0002k87mrq8qgozb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -297,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cis8iv5jx000a3u7mi0w1psc0" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cis9tjtfc000bk87m9yw81018" class="article-share-link">Share</a>
       
       
     </footer>
@@ -343,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cis8iv5j700013u7mrs6v84mh" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cis9tjtej0001k87mnz427j4k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -395,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cis8iv5j100003u7m5zb8zm4m" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cis9tjtec0000k87macy55qj5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -440,7 +488,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cis8iv5jm00043u7mczdmr6u2" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cis9tjtf10004k87mjdigtbmr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -484,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cis8iv5jt00083u7ma9lqi0eb" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cis9tjtf90009k87m1wizc92q" class="article-share-link">Share</a>
       
       
     </footer>
@@ -525,44 +573,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cis8iv5jr00073u7mgn9uvjsl" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-install-node-js" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/cf/2016/08/01/install-node-js/" class="article-date">
-  <time datetime="2016-08-01T08:34:26.000Z" itemprop="datePublished">2016-08-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/cf/2016/08/01/install-node-js/">install node.js</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ yum -y install gcc make gcc-c++ openssl-devel wget</div><div class="line">$ wget http://nodejs.org/dist/v0.10.26/node-v0.10.26.tar.gz</div><div class="line">$ tar -zxvf node-v0.10.26.tar.gz</div><div class="line">$ make &amp;&amp; make install</div><div class="line">$ node -v</div><div class="line">$ npm -v</div><div class="line">$ npm update -g</div><div class="line">$ npm install -g n</div><div class="line">$ n stable</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/01/install-node-js/" data-id="cis8iv5jo00053u7mq2svykws" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cis9tjtf80008k87mwldbxuy5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -606,6 +617,10 @@
       <ul>
         
           <li>
+            <a href="/cf/2016/08/25/mysql-on-docker/">mysql on docker</a>
+          </li>
+        
+          <li>
             <a href="/cf/2016/08/12/vps-test/">vps test</a>
           </li>
         
@@ -619,10 +634,6 @@
         
           <li>
             <a href="/cf/2016/08/05/youtube-dl/">youtube-dl</a>
-          </li>
-        
-          <li>
-            <a href="/cf/2016/08/05/aria2/">aria2</a>
           </li>
         
       </ul>
