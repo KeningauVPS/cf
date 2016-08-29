@@ -61,6 +61,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-ss" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/08/29/ss/" class="article-date">
+  <time datetime="2016-08-29T04:20:12.000Z" itemprop="datePublished">2016-08-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/08/29/ss/">ss</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Install-docker"><a href="#Install-docker" class="headerlink" title="Install docker"></a>Install docker</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sSL https://get.docker.com/ | sh</div><div class="line">docker --version</div></pre></td></tr></table></figure>
+<h3 id="Build-ss-image"><a href="#Build-ss-image" class="headerlink" title="Build ss image"></a>Build ss image</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://raw.githubusercontent.com/shadowsocks/shadowsocks-libev/master/docker/alpine/Dockerfile</div><div class="line">docker build -t shadowsocks-libev .</div><div class="line">docker images</div></pre></td></tr></table></figure>
+<h3 id="Run-ss"><a href="#Run-ss" class="headerlink" title="Run ss"></a>Run ss</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -d -e METHOD=aes-256-cfb -e PASSWORD=XXXX -p 8388:8388 --restart always shadowsocks-libev</div><div class="line">docker ps</div></pre></td></tr></table></figure>
+<h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><hr>
+<ul>
+<li>mac: <a href="/cf/2016/08/29/ss/ShadowsocksX-2.6.3.dmg" title="ShadowsocksX-2.6.3.dmg">ShadowsocksX-2.6.3.dmg</a></li>
+<li>win: <a href="/cf/2016/08/29/ss/Shadowsocks-3.2.zip" title="Shadowsocks-3.2.zip">Shadowsocks-3.2.zip</a></li>
+</ul>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><hr>
+<ul>
+<li>change port better</li>
+<li>set wifi proxy with ss for phone</li>
+<li>use nodejs proxy option for http request</li>
+</ul>
+<hr>
+<p>REF:</p>
+<p><a href="https://github.com/shadowsocks/shadowsocks-libev/tree/master/docker/alpine" target="_blank" rel="external">ss alpine docker</a> | <a href="https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">ss mac help</a> | <a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">ss win help</a> | <a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">ss client list</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/29/ss/" data-id="cisfkuxly0008cf7mtdh896wm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql-on-docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cf/2016/08/25/mysql-on-docker/" class="article-date">
@@ -99,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cisfj5ql40006497mg0cw50j5" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cisfkuxlu0006cf7msw5j7ow7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -193,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cisfj5qlc000a497mvio0wzoo" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cisfkuxm5000bcf7mgez6amyz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -244,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cisfj5ql60007497mnjdindma" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cisfkuxlw0007cf7m3ff14x50" class="article-share-link">Share</a>
       
       
     </footer>
@@ -305,7 +361,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos/" data-id="cisfj5qkz0004497muy7e2idr" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos/" data-id="cisfkuxlh0002cf7m6evrhxtt" class="article-share-link">Share</a>
       
       
     </footer>
@@ -345,7 +401,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cisfj5qle000b497memae1cjs" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cisfkuxm7000ccf7m8w6q9syp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,7 +447,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cisfj5qkl0001497mt5bdwltn" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cisfkuxld0001cf7mrqmc4tu4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -443,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cisfj5qkg0000497mfhzs0q2e" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cisfkuxl70000cf7mw8ue0vd2" class="article-share-link">Share</a>
       
       
     </footer>
@@ -488,7 +544,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cisfj5qkw0003497mwqfgecmc" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cisfkuxlr0004cf7m0jem77w5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -532,48 +588,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cisfj5ql90009497m43pi6edq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vpn-centos-6" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/cf/2016/08/02/vpn-centos-6/" class="article-date">
-  <time datetime="2016-08-02T03:32:10.000Z" itemprop="datePublished">2016-08-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/cf/2016/08/02/vpn-centos-6/">vpn centos 6</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>wget <a href="/cf/2016/08/02/vpn-centos-6/vpn_centos6.sh" title="vpn_centos6.sh">vpn_centos6.sh</a></li>
-<li>chmod a+x vpn_centos6.sh</li>
-<li>./vpn_centos6.sh</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-6/" data-id="cisfj5ql80008497mq5nax2xq" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cisfkuxm3000acf7mse5i9xzc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -617,6 +632,10 @@
       <ul>
         
           <li>
+            <a href="/cf/2016/08/29/ss/">ss</a>
+          </li>
+        
+          <li>
             <a href="/cf/2016/08/25/mysql-on-docker/">mysql on docker</a>
           </li>
         
@@ -630,10 +649,6 @@
         
           <li>
             <a href="/cf/2016/08/08/docker-on-centos/">docker on centos</a>
-          </li>
-        
-          <li>
-            <a href="/cf/2016/08/05/youtube-dl/">youtube-dl</a>
           </li>
         
       </ul>
