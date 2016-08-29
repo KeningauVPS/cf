@@ -1,5 +1,5 @@
 ---
-title: docker on centos7
+title: docker on centos
 date: 2016-08-08 15:48:05
 tags:
 ---
