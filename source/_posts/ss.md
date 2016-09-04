@@ -4,13 +4,6 @@ date: 2016-08-29 12:20:12
 tags:
 ---
 
-### Install docker
----
-```
-curl -sSL https://get.docker.com/ | sh
-docker --version
-```
-
 ### Build ss image
 ---
 ```
