@@ -13,8 +13,8 @@ tags:
 ### Note:
 - openVZ unsupported, KVM good.
 - kernel must be 3.10 at minimum.
-- docker is ok now for centos 6.8 with kernel 2.6, but 1.7.1 will be used.
-- upgrade kernel to 3.10 longterm, recommended.
+- docker is ok now for centos 6.8 with kernel 2.6, only 1.7.1 can be used.
+- so centos7 or ubuntu recommended to run 1.12 or higher version.
 
 ---
 

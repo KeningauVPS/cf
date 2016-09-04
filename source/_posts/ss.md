@@ -4,7 +4,13 @@ date: 2016-08-29 12:20:12
 tags:
 ---
 
-### Build ss image
+### Note
+---
+* kernel must be 3.10 at minimum if use docker build.
+* centos6.8 + 3.10(lt) kernel + 1.7.1 docker, It works.
+* upgrade kernel if needed.
+
+### Build ss
 ---
 ```
 wget https://raw.githubusercontent.com/shadowsocks/shadowsocks-libev/master/docker/alpine/Dockerfile
