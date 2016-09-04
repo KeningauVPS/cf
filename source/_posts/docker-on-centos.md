@@ -8,20 +8,23 @@ tags:
 1. yum install virt-what
 2. virt-what
 3. uname -r
-
+4. cat /etc/centos-release
 
 ### Note:
 - openVZ unsupported, KVM good.
 - kernel must be 3.10 at minimum.
+- docker is ok now for centos 6.8 with kernel 2.6, but 1.7.1 will be used.
+- upgrade kernel to 3.10 longterm, recommended.
 
 ---
 
 # Install
 1. sudo yum update
 2. curl -fsSL https://get.docker.com/ | sh
-3. sudo service docker start
-4. sudo docker run hello-world
+3. docker \-\-version
+4. sudo service docker start
 5. sudo chkconfig docker on
+6. sudo docker run hello-world
 
 ---
 
