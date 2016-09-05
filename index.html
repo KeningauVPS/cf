@@ -61,6 +61,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-upgrade-kernel-centos-6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/09/04/upgrade-kernel-centos-6/" class="article-date">
+  <time datetime="2016-09-04T03:51:05.000Z" itemprop="datePublished">2016-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/09/04/upgrade-kernel-centos-6/">upgrade kernel centos 6</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Import-elrepo-public-key"><a href="#Import-elrepo-public-key" class="headerlink" title="Import elrepo public key:"></a>Import elrepo public key:</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</div></pre></td></tr></table></figure>
+<h3 id="To-install-ELRepo-for-RHEL-6-SL-6-or-CentOS-6"><a href="#To-install-ELRepo-for-RHEL-6-SL-6-or-CentOS-6" class="headerlink" title="To install ELRepo for RHEL-6, SL-6 or CentOS-6:"></a>To install ELRepo for RHEL-6, SL-6 or CentOS-6:</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm</div></pre></td></tr></table></figure>
+<h3 id="Search-kernel"><a href="#Search-kernel" class="headerlink" title="Search kernel"></a>Search kernel</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum --enablerepo=elrepo-kernel list | grep kernel*</div></pre></td></tr></table></figure>
+<h3 id="Install-kernel-lt-3-10-x"><a href="#Install-kernel-lt-3-10-x" class="headerlink" title="Install kernel-lt (3.10.x)"></a>Install kernel-lt (3.10.x)</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum --enablerepo=elrepo-kernel install kernel-lt -y</div></pre></td></tr></table></figure>
+<h3 id="Modify-Grub"><a href="#Modify-Grub" class="headerlink" title="Modify Grub"></a>Modify Grub</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/grub.conf</div></pre></td></tr></table></figure>
+<p>set default=0 for new kernel when boot</p>
+<h3 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ reboot</div><div class="line">$ uname -r</div></pre></td></tr></table></figure>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><hr>
+<ul>
+<li>must modify grub and reboot after yum update which will change the kernel.</li>
+</ul>
+<hr>
+<p>REF:</p>
+<p><a href="http://elrepo.org/tiki/tiki-index.php" target="_blank" rel="external">ELRepo</a> | <a href="https://www.kernel.org/" target="_blank" rel="external">kernel</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/09/04/upgrade-kernel-centos-6/" data-id="cispf7gus0008jj7mqj9qpn8s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ss" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cf/2016/08/29/ss/" class="article-date">
@@ -83,9 +139,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Install-docker"><a href="#Install-docker" class="headerlink" title="Install docker"></a>Install docker</h3><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sSL https://get.docker.com/ | sh</div><div class="line">docker --version</div></pre></td></tr></table></figure>
-<h3 id="Build-ss-image"><a href="#Build-ss-image" class="headerlink" title="Build ss image"></a>Build ss image</h3><hr>
+        <h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><hr>
+<ul>
+<li>kernel must be 3.10 at minimum if use docker build.</li>
+<li>centos6.8 + 3.10(lt) kernel + 1.7.1 docker, It works.</li>
+<li>upgrade kernel if needed.</li>
+</ul>
+<h3 id="Build-ss"><a href="#Build-ss" class="headerlink" title="Build ss"></a>Build ss</h3><hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://raw.githubusercontent.com/shadowsocks/shadowsocks-libev/master/docker/alpine/Dockerfile</div><div class="line">docker build -t shadowsocks-libev .</div><div class="line">docker images</div></pre></td></tr></table></figure>
 <h3 id="Run-ss"><a href="#Run-ss" class="headerlink" title="Run ss"></a>Run ss</h3><hr>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -d -e METHOD=aes-256-cfb -e PASSWORD=XXXX -p 8388:8388 --restart always shadowsocks-libev</div><div class="line">docker ps</div></pre></td></tr></table></figure>
@@ -107,7 +167,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/29/ss/" data-id="cisfkuxly0008cf7mtdh896wm" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/29/ss/" data-id="cispf7guq0007jj7mkoemf7zv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cisfkuxlu0006cf7msw5j7ow7" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cispf7guk0005jj7mqjre2wpy" class="article-share-link">Share</a>
       
       
     </footer>
@@ -249,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cisfkuxm5000bcf7mgez6amyz" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cispf7guy000bjj7mb5kds1ns" class="article-share-link">Share</a>
       
       
     </footer>
@@ -300,7 +360,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cisfkuxlw0007cf7m3ff14x50" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cispf7gum0006jj7m7q3k80ic" class="article-share-link">Share</a>
       
       
     </footer>
@@ -336,18 +396,22 @@
 <li>yum install virt-what</li>
 <li>virt-what</li>
 <li>uname -r</li>
+<li>cat /etc/centos-release</li>
 </ol>
 <h3 id="Note"><a href="#Note" class="headerlink" title="Note:"></a>Note:</h3><ul>
 <li>openVZ unsupported, KVM good.</li>
 <li>kernel must be 3.10 at minimum.</li>
+<li>docker is ok now for centos 6.8 with kernel 2.6, only 1.7.1 can be used.</li>
+<li>so centos7 or ubuntu recommended to run 1.12 or higher version.</li>
 </ul>
 <hr>
 <h1 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h1><ol>
 <li>sudo yum update</li>
 <li>curl -fsSL <a href="https://get.docker.com/" target="_blank" rel="external">https://get.docker.com/</a> | sh</li>
+<li>docker --version</li>
 <li>sudo service docker start</li>
-<li>sudo docker run hello-world</li>
 <li>sudo chkconfig docker on</li>
+<li>sudo docker run hello-world</li>
 </ol>
 <hr>
 <h1 id="Uninstall"><a href="#Uninstall" class="headerlink" title="Uninstall"></a>Uninstall</h1><ol>
@@ -361,7 +425,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos/" data-id="cisfkuxlh0002cf7m6evrhxtt" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos/" data-id="cispf7gu90002jj7mhmqhr1f7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -401,7 +465,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cisfkuxm7000ccf7m8w6q9syp" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cispf7guz000cjj7miwh3ls90" class="article-share-link">Share</a>
       
       
     </footer>
@@ -447,7 +511,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cisfkuxld0001cf7mrqmc4tu4" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cispf7gu60001jj7mfnq3qz5l" class="article-share-link">Share</a>
       
       
     </footer>
@@ -483,15 +547,11 @@
 <li>sudo wget -O /etc/yum.repos.d/CentOS-Base.repo <a href="http://mirrors.aliyun.com/repo/Centos-7.repo" target="_blank" rel="external">http://mirrors.aliyun.com/repo/Centos-7.repo</a></li>
 <li>sudo yum makecache</li>
 <li>sudo yum update</li>
-<li>sudo yum groupinstall “Development tools”</li>
-<li>sudo yum install -y gcc cmake make gcc-c++  apr<em>  automake autoconf libxml2 libxml2-devel openssl openssl-devel curl</em> libjpeg<em> libpng</em> freetype<em> zlib-devel zip unzip gzip ncurses</em> pcre-devel bzip2<em> gd gd-devel kernel keyutils patch perl kernel-headers compat</em> mpfr cpp glibc libgomp libstdc++-devel ppl cloog-ppl keyutils-libs-devel libcom_err-devel libsepol-devel libselinux-devel krb5-devel zlib-devel libXpm<em>  php-common php-gd ncurses</em> libtool*  patch  libmcrypt libmcrypt-devel mcrypt mhash –skip-broken</li>
-<li>sudo yum install libicu-devel</li>
-<li>sudo yum install -y libxslt libxslt-devel libxml2 libxml2-devel</li>
-<li>sudo yum install php-devel</li>
-<li>sudo yum install php-pear</li>
-<li>sudo yum install curl-devel</li>
-<li>sudo yum install php-pecl-memcache</li>
+<li>sudo yum groupinstall “Development Tools”</li>
+<li>sudo yum install -y gcc cmake make gcc-c++ apr<em> automake autoconf libxml2 libxml2-devel openssl openssl-devel curl</em> libjpeg<em> libpng</em> freetype<em> zlib-devel zip unzip gzip ncurses</em> pcre-devel bzip2<em> gd gd-devel kernel keyutils patch perl kernel-headers compat</em> mpfr cpp glibc libgomp libstdc++-devel ppl cloog-ppl keyutils-libs-devel libcom_err-devel libsepol-devel libselinux-devel krb5-devel zlib-devel libXpm<em> php-common php-gd ncurses</em> libtool* patch libmcrypt libmcrypt-devel mcrypt mhash –skip-broken</li>
+<li>sudo yum install -y libicu-devel libxslt libxslt-devel libxml2 libxml2-devel php-devel php-pear curl-devel php-pecl-memcache</li>
 <li>sudo pecl install pecl_http</li>
+<li>sudo yum grouplist</li>
 </ol>
 <hr>
 <p>Repo: <a href="http://mirrors.aliyun.com" target="_blank" rel="external">Aliyun</a></p>
@@ -499,7 +559,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cisfkuxl70000cf7mw8ue0vd2" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cispf7gu00000jj7m2pm5gbuf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -544,51 +604,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cisfkuxlr0004cf7m0jem77w5" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vpn-centos-7" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/cf/2016/08/02/vpn-centos-7/" class="article-date">
-  <time datetime="2016-08-02T04:27:18.000Z" itemprop="datePublished">2016-08-02</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/cf/2016/08/02/vpn-centos-7/">vpn centos 7</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>wget <a href="/cf/2016/08/02/vpn-centos-7/vpn_centos7.sh" title="vpn_centos7.sh">vpn_centos7.sh</a></li>
-<li>chmod a+x vpn_centos7.sh</li>
-<li>./vpn_centos7.sh</li>
-<li>vim /etc/ppp/chap-secrets</li>
-<li>service pptpd restart</li>
-<li>yum install net-tools</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/02/vpn-centos-7/" data-id="cisfkuxm3000acf7mse5i9xzc" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cispf7guf0003jj7menp5eqgv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -619,7 +635,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/cf/archives/2016/08/">August 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/cf/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/cf/archives/2016/08/">August 2016</a></li></ul>
     </div>
   </div>
 
@@ -630,6 +646,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/cf/2016/09/04/upgrade-kernel-centos-6/">upgrade kernel centos 6</a>
+          </li>
         
           <li>
             <a href="/cf/2016/08/29/ss/">ss</a>
@@ -645,10 +665,6 @@
         
           <li>
             <a href="/cf/2016/08/09/nsenter-on-docker/">nsenter on docker</a>
-          </li>
-        
-          <li>
-            <a href="/cf/2016/08/08/docker-on-centos/">docker on centos</a>
           </li>
         
       </ul>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>upgrade kernel centos 6 | cf</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Import elrepo public key:
+1rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+To install ELRepo for RHEL-6, SL-6 or CentOS-6:
+1rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noar">
+<meta property="og:type" content="article">
+<meta property="og:title" content="upgrade kernel centos 6">
+<meta property="og:url" content="http://molycolor.github.io/cf/2016/09/04/upgrade-kernel-centos-6/index.html">
+<meta property="og:site_name" content="cf">
+<meta property="og:description" content="Import elrepo public key:
+1rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+To install ELRepo for RHEL-6, SL-6 or CentOS-6:
+1rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noar">
+<meta property="og:updated_time" content="2016-09-05T02:19:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="upgrade kernel centos 6">
+<meta name="twitter:description" content="Import elrepo public key:
+1rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+To install ELRepo for RHEL-6, SL-6 or CentOS-6:
+1rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noar">
+  
+    <link rel="alternate" href="/atom.xml" title="cf" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/cf/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/cf/" id="logo">cf</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/cf/">Home</a>
+        
+          <a class="main-nav-link" href="/cf/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://molycolor.github.io/cf"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-upgrade-kernel-centos-6" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/09/04/upgrade-kernel-centos-6/" class="article-date">
+  <time datetime="2016-09-04T03:51:05.000Z" itemprop="datePublished">2016-09-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      upgrade kernel centos 6
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Import-elrepo-public-key"><a href="#Import-elrepo-public-key" class="headerlink" title="Import elrepo public key:"></a>Import elrepo public key:</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</div></pre></td></tr></table></figure>
+<h3 id="To-install-ELRepo-for-RHEL-6-SL-6-or-CentOS-6"><a href="#To-install-ELRepo-for-RHEL-6-SL-6-or-CentOS-6" class="headerlink" title="To install ELRepo for RHEL-6, SL-6 or CentOS-6:"></a>To install ELRepo for RHEL-6, SL-6 or CentOS-6:</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm</div></pre></td></tr></table></figure>
+<h3 id="Search-kernel"><a href="#Search-kernel" class="headerlink" title="Search kernel"></a>Search kernel</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum --enablerepo=elrepo-kernel list | grep kernel*</div></pre></td></tr></table></figure>
+<h3 id="Install-kernel-lt-3-10-x"><a href="#Install-kernel-lt-3-10-x" class="headerlink" title="Install kernel-lt (3.10.x)"></a>Install kernel-lt (3.10.x)</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum --enablerepo=elrepo-kernel install kernel-lt -y</div></pre></td></tr></table></figure>
+<h3 id="Modify-Grub"><a href="#Modify-Grub" class="headerlink" title="Modify Grub"></a>Modify Grub</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/grub.conf</div></pre></td></tr></table></figure>
+<p>set default=0 for new kernel when boot</p>
+<h3 id="Over"><a href="#Over" class="headerlink" title="Over"></a>Over</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ reboot</div><div class="line">$ uname -r</div></pre></td></tr></table></figure>
+<h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><hr>
+<ul>
+<li>must modify grub and reboot after yum update which will change the kernel.</li>
+</ul>
+<hr>
+<p>REF:</p>
+<p><a href="http://elrepo.org/tiki/tiki-index.php" target="_blank" rel="external">ELRepo</a> | <a href="https://www.kernel.org/" target="_blank" rel="external">kernel</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/09/04/upgrade-kernel-centos-6/" data-id="cispf7gus0008jj7mqj9qpn8s" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/cf/2016/08/29/ss/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">ss</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/cf/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/cf/archives/2016/08/">August 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/cf/2016/09/04/upgrade-kernel-centos-6/">upgrade kernel centos 6</a>
+          </li>
+        
+          <li>
+            <a href="/cf/2016/08/29/ss/">ss</a>
+          </li>
+        
+          <li>
+            <a href="/cf/2016/08/25/mysql-on-docker/">mysql on docker</a>
+          </li>
+        
+          <li>
+            <a href="/cf/2016/08/12/vps-test/">vps test</a>
+          </li>
+        
+          <li>
+            <a href="/cf/2016/08/09/nsenter-on-docker/">nsenter on docker</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 cf<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/cf/" class="mobile-nav-link">Home</a>
+  
+    <a href="/cf/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/cf/fancybox/jquery.fancybox.css">
+  <script src="/cf/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/cf/js/script.js"></script>
+
+  </div>
+</body>
+</html>
