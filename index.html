@@ -61,6 +61,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-haproxy-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/cf/2016/09/06/haproxy-docker/" class="article-date">
+  <time datetime="2016-09-06T07:52:35.000Z" itemprop="datePublished">2016-09-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/cf/2016/09/06/haproxy-docker/">haproxy docker</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker pull nginx</div><div class="line">docker pull haproxy</div></pre></td></tr></table></figure>
+<h3 id="Run-Web"><a href="#Run-Web" class="headerlink" title="Run Web"></a>Run Web</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run --name n1 -v /root/n1:/usr/share/nginx/html:ro -d nginx</div><div class="line">docker run --name n2 -v /root/n2:/usr/share/nginx/html:ro -d nginx</div></pre></td></tr></table></figure>
+<h3 id="Modify-DNS"><a href="#Modify-DNS" class="headerlink" title="Modify DNS"></a>Modify DNS</h3><hr>
+<ul>
+<li>point to IP</li>
+</ul>
+<h3 id="Modify-haproxy-cfg"><a href="#Modify-haproxy-cfg" class="headerlink" title="Modify haproxy.cfg"></a>Modify haproxy.cfg</h3><hr>
+<ul>
+<li>frontend domain name</li>
+<li>backend server name port</li>
+</ul>
+<h3 id="Run-Haproxy"><a href="#Run-Haproxy" class="headerlink" title="Run Haproxy"></a>Run Haproxy</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d --name my_haproxy -p 80:80 --link n1:n1 --link n2:n2 -v /root/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro haproxy</div></pre></td></tr></table></figure>
+<h3 id="Reload-cfg"><a href="#Reload-cfg" class="headerlink" title="Reload cfg"></a>Reload cfg</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker kill -s HUP my_haproxy</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://molycolor.github.io/cf/cf/2016/09/06/haproxy-docker/" data-id="cisr6s4a800038z7mch5k0oxj" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-upgrade-kernel-centos-6" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/cf/2016/09/04/upgrade-kernel-centos-6/" class="article-date">
@@ -107,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/09/04/upgrade-kernel-centos-6/" data-id="cispf7gus0008jj7mqj9qpn8s" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/09/04/upgrade-kernel-centos-6/" data-id="cisr6s4an00098z7ma465quv1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/29/ss/" data-id="cispf7guq0007jj7mkoemf7zv" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/29/ss/" data-id="cisr6s4al00088z7meuxtdn7o" class="article-share-link">Share</a>
       
       
     </footer>
@@ -215,7 +268,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cispf7guk0005jj7mqjre2wpy" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/25/mysql-on-docker/" data-id="cisr6s4af00068z7mh3t6bail" class="article-share-link">Share</a>
       
       
     </footer>
@@ -309,7 +362,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cispf7guy000bjj7mb5kds1ns" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/12/vps-test/" data-id="cisr6s4as000c8z7mxvq7aubc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -360,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cispf7gum0006jj7m7q3k80ic" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/09/nsenter-on-docker/" data-id="cisr6s4ai00078z7mna5324qs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -425,7 +478,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos/" data-id="cispf7gu90002jj7mhmqhr1f7" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/08/docker-on-centos/" data-id="cisr6s4a100028z7m9jep8o0v" class="article-share-link">Share</a>
       
       
     </footer>
@@ -465,7 +518,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cispf7guz000cjj7miwh3ls90" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/youtube-dl/" data-id="cisr6s4at000d8z7me4awe8bk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -511,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cispf7gu60001jj7mfnq3qz5l" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/aria2/" data-id="cisr6s49x00018z7m2dg7jbjj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -559,52 +612,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cispf7gu00000jj7m2pm5gbuf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-install-lnmp" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/cf/2016/08/03/install-lnmp/" class="article-date">
-  <time datetime="2016-08-03T03:41:58.000Z" itemprop="datePublished">2016-08-03</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/cf/2016/08/03/install-lnmp/">install lnmp</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ol>
-<li>wget <a href="/cf/2016/08/03/install-lnmp/lnmp1.3.tar.gz" title="lnmp1.3.tar.gz">lnmp1.3.tar.gz</a></li>
-<li>tar zxvf lnmp1.3.tar.gz</li>
-<li>cd lnmp1.3</li>
-<li>./install.sh</li>
-<li><a href="http://lnmp.org/faq/lnmp-vhost-add-howto.html" target="_blank" rel="external">add vhost</a></li>
-<li><a href="http://lnmp.org/faq/lnmp-software-list.html" target="_blank" rel="external">install path</a></li>
-<li><a href="http://lnmp.org/faq/lnmp-status-manager.html" target="_blank" rel="external">management</a></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/03/install-lnmp/" data-id="cispf7guf0003jj7menp5eqgv" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/08/05/Dev-Env-CentOS/" data-id="cisr6s49r00008z7mzqsn8n1j" class="article-share-link">Share</a>
       
       
     </footer>
@@ -648,6 +656,10 @@
       <ul>
         
           <li>
+            <a href="/cf/2016/09/06/haproxy-docker/">haproxy docker</a>
+          </li>
+        
+          <li>
             <a href="/cf/2016/09/04/upgrade-kernel-centos-6/">upgrade kernel centos 6</a>
           </li>
         
@@ -661,10 +673,6 @@
         
           <li>
             <a href="/cf/2016/08/12/vps-test/">vps test</a>
-          </li>
-        
-          <li>
-            <a href="/cf/2016/08/09/nsenter-on-docker/">nsenter on docker</a>
           </li>
         
       </ul>

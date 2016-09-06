@@ -3,39 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ss | cf</title>
+  <title>haproxy docker | cf</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Note
-
-kernel must be 3.10 at minimum if use docker build.
-centos6.8 + 3.10(lt) kernel + 1.7.1 docker, It works.
-upgrade kernel if needed.
-
-Build ss
-123wget https://raw.githubusercontent.com/shadowsock">
+  <meta name="description" content="Install
+12docker pull nginxdocker pull haproxy
+Run Web
+12docker run --name n1 -v /root/n1:/usr/share/nginx/html:ro -d nginxdocker run --name n2 -v /root/n2:/usr/share/nginx/html:ro -d nginx
+Modify DNS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ss">
-<meta property="og:url" content="http://molycolor.github.io/cf/2016/08/29/ss/index.html">
+<meta property="og:title" content="haproxy docker">
+<meta property="og:url" content="http://molycolor.github.io/cf/2016/09/06/haproxy-docker/index.html">
 <meta property="og:site_name" content="cf">
-<meta property="og:description" content="Note
-
-kernel must be 3.10 at minimum if use docker build.
-centos6.8 + 3.10(lt) kernel + 1.7.1 docker, It works.
-upgrade kernel if needed.
-
-Build ss
-123wget https://raw.githubusercontent.com/shadowsock">
-<meta property="og:updated_time" content="2016-09-05T02:19:23.000Z">
+<meta property="og:description" content="Install
+12docker pull nginxdocker pull haproxy
+Run Web
+12docker run --name n1 -v /root/n1:/usr/share/nginx/html:ro -d nginxdocker run --name n2 -v /root/n2:/usr/share/nginx/html:ro -d nginx
+Modify DNS">
+<meta property="og:updated_time" content="2016-09-06T07:58:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ss">
-<meta name="twitter:description" content="Note
-
-kernel must be 3.10 at minimum if use docker build.
-centos6.8 + 3.10(lt) kernel + 1.7.1 docker, It works.
-upgrade kernel if needed.
-
-Build ss
-123wget https://raw.githubusercontent.com/shadowsock">
+<meta name="twitter:title" content="haproxy docker">
+<meta name="twitter:description" content="Install
+12docker pull nginxdocker pull haproxy
+Run Web
+12docker run --name n1 -v /root/n1:/usr/share/nginx/html:ro -d nginxdocker run --name n2 -v /root/n2:/usr/share/nginx/html:ro -d nginx
+Modify DNS">
   
     <link rel="alternate" href="/atom.xml" title="cf" type="application/atom+xml">
   
@@ -84,10 +75,10 @@ Build ss
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ss" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-haproxy-docker" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/cf/2016/08/29/ss/" class="article-date">
-  <time datetime="2016-08-29T04:20:12.000Z" itemprop="datePublished">2016-08-29</time>
+    <a href="/cf/2016/09/06/haproxy-docker/" class="article-date">
+  <time datetime="2016-09-06T07:52:35.000Z" itemprop="datePublished">2016-09-06</time>
 </a>
     
   </div>
@@ -98,7 +89,7 @@ Build ss
         
   
     <h1 class="article-title" itemprop="name">
-      ss
+      haproxy docker
     </h1>
   
 
@@ -106,35 +97,28 @@ Build ss
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h3><hr>
+        <h3 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker pull nginx</div><div class="line">docker pull haproxy</div></pre></td></tr></table></figure>
+<h3 id="Run-Web"><a href="#Run-Web" class="headerlink" title="Run Web"></a>Run Web</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run --name n1 -v /root/n1:/usr/share/nginx/html:ro -d nginx</div><div class="line">docker run --name n2 -v /root/n2:/usr/share/nginx/html:ro -d nginx</div></pre></td></tr></table></figure>
+<h3 id="Modify-DNS"><a href="#Modify-DNS" class="headerlink" title="Modify DNS"></a>Modify DNS</h3><hr>
 <ul>
-<li>kernel must be 3.10 at minimum if use docker build.</li>
-<li>centos6.8 + 3.10(lt) kernel + 1.7.1 docker, It works.</li>
-<li>upgrade kernel if needed.</li>
+<li>point to IP</li>
 </ul>
-<h3 id="Build-ss"><a href="#Build-ss" class="headerlink" title="Build ss"></a>Build ss</h3><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">wget https://raw.githubusercontent.com/shadowsocks/shadowsocks-libev/master/docker/alpine/Dockerfile</div><div class="line">docker build -t shadowsocks-libev .</div><div class="line">docker images</div></pre></td></tr></table></figure>
-<h3 id="Run-ss"><a href="#Run-ss" class="headerlink" title="Run ss"></a>Run ss</h3><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">docker run -d -e METHOD=aes-256-cfb -e PASSWORD=XXXX -p 8388:8388 --restart always shadowsocks-libev</div><div class="line">docker ps</div></pre></td></tr></table></figure>
-<h3 id="Client"><a href="#Client" class="headerlink" title="Client"></a>Client</h3><hr>
+<h3 id="Modify-haproxy-cfg"><a href="#Modify-haproxy-cfg" class="headerlink" title="Modify haproxy.cfg"></a>Modify haproxy.cfg</h3><hr>
 <ul>
-<li>mac: <a href="/cf/2016/08/29/ss/ShadowsocksX-2.6.3.dmg" title="ShadowsocksX-2.6.3.dmg">ShadowsocksX-2.6.3.dmg</a></li>
-<li>win: <a href="/cf/2016/08/29/ss/Shadowsocks-3.2.zip" title="Shadowsocks-3.2.zip">Shadowsocks-3.2.zip</a></li>
+<li>frontend domain name</li>
+<li>backend server name port</li>
 </ul>
-<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><hr>
-<ul>
-<li>change port better</li>
-<li>set wifi proxy with ss for phone</li>
-<li>use nodejs proxy option for http request</li>
-</ul>
-<hr>
-<p>REF:</p>
-<p><a href="https://github.com/shadowsocks/shadowsocks-libev/tree/master/docker/alpine" target="_blank" rel="external">ss alpine docker</a> | <a href="https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-%E5%B8%AE%E5%8A%A9" target="_blank" rel="external">ss mac help</a> | <a href="https://github.com/shadowsocks/shadowsocks-windows/wiki/Shadowsocks-Windows-%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E" target="_blank" rel="external">ss win help</a> | <a href="https://shadowsocks.org/en/download/clients.html" target="_blank" rel="external">ss client list</a></p>
+<h3 id="Run-Haproxy"><a href="#Run-Haproxy" class="headerlink" title="Run Haproxy"></a>Run Haproxy</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -d --name my_haproxy -p 80:80 --link n1:n1 --link n2:n2 -v /root/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro haproxy</div></pre></td></tr></table></figure>
+<h3 id="Reload-cfg"><a href="#Reload-cfg" class="headerlink" title="Reload cfg"></a>Reload cfg</h3><hr>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker kill -s HUP my_haproxy</div></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://molycolor.github.io/cf/cf/2016/08/29/ss/" data-id="cisr6s4al00088z7meuxtdn7o" class="article-share-link">Share</a>
+      <a data-url="http://molycolor.github.io/cf/cf/2016/09/06/haproxy-docker/" data-id="cisr6s4a800038z7mch5k0oxj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -143,19 +127,10 @@ Build ss
     
 <nav id="article-nav">
   
-    <a href="/cf/2016/09/04/upgrade-kernel-centos-6/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          upgrade kernel centos 6
-        
-      </div>
-    </a>
   
-  
-    <a href="/cf/2016/08/25/mysql-on-docker/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/cf/2016/09/04/upgrade-kernel-centos-6/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">mysql on docker</div>
+      <div class="article-nav-title">upgrade kernel centos 6</div>
     </a>
   
 </nav>
